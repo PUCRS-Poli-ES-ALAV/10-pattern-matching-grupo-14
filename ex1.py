@@ -35,13 +35,16 @@ s2m = "AAA"
 s1p = "A" * 500000
 s2p = "A" * 499999 + "B"
 
+
+
 casos = [
     ("ABCD", "CD"),
     ("AAAAAA", "AAA"),
     ("ABCDEFG", "XYZ"),
     ("ABCDCBDCBDACBDABDCBADF", "ADF"),
     (s1m, s2m),
-    (s1p, s2p)
+    (s1p, s2p),
+    ("ABCDCBDCBDACBDABDCBADFABCDCBDCBDACBDABDCBADFABCDCBDCBDACBDABDCBADFABCDCBDCBDACBDABDCBAD" * 1000000 + "ADFS", "ADFS") # se adicionar mais um 0 nao roda 
 ]
 
 for s1, s2 in casos:
