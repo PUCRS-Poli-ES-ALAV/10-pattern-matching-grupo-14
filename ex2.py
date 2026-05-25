@@ -33,7 +33,6 @@ class RabinKarp:
         iteracoes += it_hash_pat
         inst += inst_hash_pat
 
-        # percorre o texto
         for i in range(N - M + 1):
 
             inst += 1
