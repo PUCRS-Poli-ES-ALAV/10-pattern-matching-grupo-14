@@ -25,6 +25,7 @@ def ver_ocorrencia(s1, s2):
 
     return -1, iter, inst  # -1 se não encontrar
 
+
 # testes de desempenho
 
 # melhor caso:
@@ -34,8 +35,6 @@ s2m = "AAA"
 # pior caso: 
 s1p = "A" * 500000
 s2p = "A" * 499999 + "B"
-
-
 
 casos = [
     ("ABCD", "CD"),

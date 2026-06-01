@@ -64,7 +64,7 @@ class RabinKarp:
         return -1, iteracoes, inst
 
 
-# ---------------- TESTES ----------------
+# testes de desempenho
 
 # melhor caso
 s1m = "A" * 500000
