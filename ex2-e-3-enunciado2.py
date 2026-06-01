@@ -66,11 +66,11 @@ class RabinKarp:
 # TESTES
 # ==========================
 
-# Melhor caso
+# Melhor caso = O(M)
 s1_melhor = "A" * 500000
 s2_melhor = "AAA"
 
-# Pior caso
+# Pior caso = O(NxM)
 s1_pior = "A" * 500000
 s2_pior = "A" * 1000 + "B"
 
