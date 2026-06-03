@@ -1,7 +1,9 @@
+# Algoritmo de Rabin-Karp para busca de substring
 class RabinKarp:
     R = 256
     Q = 1000000007  # número primo grande
 
+    # funcao para calcular o hash de uma string
     @staticmethod
     def hash(s, M):
         h = 0
@@ -17,6 +19,7 @@ class RabinKarp:
 
         return h, iteracoes, instrucoes
 
+    # função principal de busca Rabin-Karp
     @staticmethod
     def search(pat, txt):
         iteracoes = 0
@@ -61,34 +64,28 @@ class RabinKarp:
 
         return -1, iteracoes, instrucoes
 
+if __name__ == "__main__":
+    # testes de desempenho
 
-# ==========================
-# TESTES
-# ==========================
+    s1m = "A" * 500000
+    s2m = "AAA"
 
-# Melhor caso = O(M)
-s1_melhor = "A" * 500000
-s2_melhor = "AAA"
+    s1p = "A" * 500000
+    s2p = "A" * 499999 + "B"
 
-# Pior caso = O(NxM)
-s1_pior = "A" * 500000
-s2_pior = "A" * 1000 + "B"
+    casos = [
+        ("ABCD", "CD"),
+        ("AAAAAA", "AAA"),
+        ("ABCDEFG", "XYZ"),
+        ("ABCDCBDCBDACBDABDCBADF", "ADF"),
+        (s1m, s2m),
+        (s1p, s2p),
+    ]
 
-casos = [
-    ("ABCD", "CD"),
-    ("AAAAAA", "AAA"),
-    ("ABCDEFG", "XYZ"),
-    ("ABCDCBDCBDACBDABDCBADF", "ADF"),
-    (s1_melhor, s2_melhor),
-    (s1_pior, s2_pior)
-]
-
-for s1, s2 in casos:
-    pos, it, inst = RabinKarp.search(s2, s1)
-
-    print(f"Tamanho s1 = {len(s1)}")
-    print(f"Tamanho s2 = {len(s2)}")
-    print(f"Posição encontrada = {pos}")
-    print(f"Iterações = {it}")
-    print(f"Instruções = {inst}")
-    print("-" * 50)
+    for s1, s2 in casos:
+        pos, it, inst = RabinKarp.search(s1, s2) 
+        print(f"Tamanho s1={len(s1)}, s2={len(s2)}")
+        print(f"Posição: {pos}")
+        print(f"Iterações: {it}")
+        print(f"Instruções: {inst}")
+        print("-" * 30)
